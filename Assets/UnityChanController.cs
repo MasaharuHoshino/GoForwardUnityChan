@@ -60,9 +60,6 @@ public class UnityChanController : MonoBehaviour
             }
         }
 
-        // Debug
-        Debug.Log(this.transform.position.x);
-
         // デッドラインを超えた場合ゲームオーバーにする
         if (transform.position.x < this.deadLine)
         {

@@ -28,4 +28,17 @@ public class CubeController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        // 地面や他のキューブに接触したときに効果音を鳴らし、Unityちゃんと衝突したときには効果音を鳴らないようにする
+        if (other.gameObject.tag == "GroundTag" || other.gameObject.tag == "CubeTag")
+        {
+            GetComponent<AudioSource>().Play();
+        }
+        if (other.gameObject.tag == "UnityChan")
+        {
+            GetComponent<AudioSource>().Stop();
+        }
+    }
 }
